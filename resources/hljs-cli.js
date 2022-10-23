@@ -1,3 +1,3 @@
-let hljs = require('../vendor/npm-asset/highlight.js/lib/index');
+let hljs = require('highlight.js');
 
 console.log(hljs.highlightAuto(process.argv[2]).value);

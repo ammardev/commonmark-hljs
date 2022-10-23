@@ -13,7 +13,7 @@ final class HighlightJsExtension implements ExtensionInterface
 {
     public function register(EnvironmentBuilderInterface $environment): void
     {
-        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer());
-//        $environment->addRenderer(IndentedCode::class, new IndentedCodeRenderer());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(), 1);
+        $environment->addRenderer(IndentedCode::class, new IndentedCodeRenderer(), 1);
     }
 }

@@ -6,7 +6,7 @@ class HighlightJsProcessor
 {
     public static function highlight(string $code): string
     {
-        // TODO: call node to execute hljs
-        return '';
+        exec('node ../resources/hljs-cli.js ' . $code . ' 2>&1', $output, $test);
+        return $output;
     }
 }
