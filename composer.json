@@ -1,0 +1,34 @@
+{
+    "name": "ammardev/commonmark-hljs",
+    "description": "Highlight markdown code using hljs on the backend side",
+    "keywords": [
+        "commonmark-hljs"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ammar Al-Khawaldeh",
+            "email": "me@ammar.dev",
+            "homepage": "https://ammar.dev",
+            "role": "Developer"
+
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "league/commonmark": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ammardev\\CommonMarkHighlightJs\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ammardev\\CommonMarkHighlightJs\\Tests\\": "tests"
+        }
+    }
+}
