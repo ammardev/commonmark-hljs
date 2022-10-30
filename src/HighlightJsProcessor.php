@@ -2,11 +2,26 @@
 
 namespace Ammardev\CommonMarkHighlightJs;
 
+use Symfony\Component\Process\Process;
+
 class HighlightJsProcessor
 {
     public static function highlight(string $code): string
     {
-        exec('node ../resources/hljs-cli.js ' . $code . ' 2>&1', $output, $test);
-        return $output;
+        $code = strip_tags($code);
+        $code = htmlspecialchars_decode($code);
+
+        $process = new Process(['node', 'hljs-cli.js', $code], __DIR__ . '/../resources');
+
+        $processOutput = '';
+
+        $captureOutput = function ($type, $line) use (&$processOutput) {
+            $processOutput .= $line;
+        };
+
+        $process->setTimeout(null)
+            ->run($captureOutput);
+
+        return $processOutput;
     }
 }

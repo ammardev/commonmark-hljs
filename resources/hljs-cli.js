@@ -1,3 +1,3 @@
 let hljs = require('highlight.js');
 
-console.log(hljs.highlightAuto(process.argv[2]).value);
+console.log(hljs.highlight(process.argv[2], {language: 'php'}).value);
